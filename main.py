@@ -9,7 +9,7 @@ intents = nextcord.Intents.all()
 client = commands.Bot(intents=intents, command_prefix="s!")
 
 @client.event
-async def on_read():
+async def on_ready():
     print(f"Logged in as {client.user.username}.")
 
 for fn in os.listdir("./cogs"):
