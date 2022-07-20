@@ -12,7 +12,21 @@ client = commands.Bot(intents=intents, command_prefix="s!")
 
 @client.event
 async def on_ready():
-    print(f"Logged in as {client.user.username}.")
+    print(f"Logged in as {client.user}.")
+
+
+@client.event
+async def on_command_error(ctx, error):
+    await ctx.send(f"Error: {error}")
+
+
+# ?    _____ ____   _____  _____
+# ?   / ____/ __ \ / ____|/ ____|
+# ?  | |   | |  | | |  __| (___
+# ?  | |   | |  | | | |_ |\___ \
+# ?  | |___| |__| | |__| |____) |
+# ?   \_____\____/ \_____|_____/
+
 
 for fn in os.listdir("./cogs"):
     if fn.endswith(".py"):
@@ -35,5 +49,14 @@ async def unload(ctx, extension):
 async def reload(ctx, extension):
     client.reload_extension(f"cogs.{extension}")
     await ctx.send(f"Reloaded {extension}.")
+
+
+# ?    _____ ____   _____  _____
+# ?   / ____/ __ \ / ____|/ ____|
+# ?  | |   | |  | | |  __| (___
+# ?  | |   | |  | | | |_ |\___ \
+# ?  | |___| |__| | |__| |____) |
+# ?   \_____\____/ \_____|_____/
+
 
 client.run(TOKEN)
