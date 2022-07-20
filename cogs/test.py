@@ -7,8 +7,8 @@ class Basic(commands.Cog):
         super().__init__()
 
     @commands.command()
-    async def hello(self, ctx):
-        await ctx.send(f'Hello {ctx.author.mention}!')
+    async def test(self, ctx):
+        await ctx.send(f'Test Command!')
 
 
 def setup(client):
