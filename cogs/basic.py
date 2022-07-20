@@ -7,7 +7,7 @@ class Basic(commands.Cog):
         super().__init__()
 
     @commands.command()
-    async def hello(self, ctx):
+    async def test(self, ctx):
         await ctx.send(f'Hello {ctx.author.mention}!')
 
 
